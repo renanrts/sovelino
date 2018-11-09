@@ -133,9 +133,8 @@
                     <div class="col-12 h-100">
                         <div class="footer-bottom-content h-100 d-md-flex justify-content-between align-items-center">
                             <div class="copyright-text">
-                                <p style="color:white;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template was made by GrubeLube
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <p style="color:white;">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template was made by GrubLube
 </p>
                             </div>
                         </div>
