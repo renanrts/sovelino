@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.pl.domain.Calculo;
+import br.com.pl.domain.Equacao;
+import br.com.pl.viewhelper.VHEquacao;
+
 
 /**
  * Servlet implementation class Servlet
@@ -21,14 +25,14 @@ public class Servlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		VHProblema vhproblema = new VHProblema();
-		Problema problema = vhproblema.getProblema(request);
-		Calculo calc = new Calculo();
-		calc.solucaoOtima(problema);
+		VHEquacao vhequacao = new VHEquacao();
+		Equacao equacao = vhequacao.getEquacao(request);
+		Calculo cal = new Calculo();
+		equacao = cal.calcular(equacao);
+		
 		
 		PrintWriter out = response.getWriter();
-        out.println("<html><body>tipoProblema: " + problema.getTipoProblema() + " / getValorVariavelX: " + problema.getValorVariavelX() + " / getOperadorFuncaoObjetivo: " + problema.getOperadorFuncaoObjetivo() + " / getValorVariavelY: " + problema.getValorVariavelY() + " / getStObjetivo: " + problema.getStObjetivo() + " / getStVariavelX: " + problema.getStVariavelX() + " / getStVariavelY(): " + problema.getStVariavelY()  +  " / getValorXRestricao(1):"  + problema.getRestricoes().get(0).getValorXRestricao() + "</body></html>");
-		
-	}
+        out.println("<html><body>O lucro maximo é " + equacao.getResultado().getResultado() + " é a solução ótima e os pontos são: x" + equacao.getResultado().getCoordenada().getX() + "e y" + equacao.getResultado().getDescResposta() + "</body></html>");
+	}			
 
 }

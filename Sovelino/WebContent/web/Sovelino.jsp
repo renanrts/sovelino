@@ -83,12 +83,12 @@
 				<bold>	<h5>FUNÇÃO OBJETIVO</h5></bold>
 				</legend>
 				Defina sua função objetivo: <input type="text" name="valorVariavelX"
-					placeholder="Coeficiente de x"> x <select
+					placeholder="Coeficiente de x" style="width: 130px;"> x <select
 					name="operadorFuncaoObjetivo">
 					<option value="+">+</option>
 					<option value="-">-</option>
 				</select> <input type="text" name="valorVariavelY"
-					placeholder="Coeficiente de y"> y = <input type="text"
+					placeholder="Coeficiente de y" style="width: 130px;"> y = <input type="text"
 					name="stObjetivo" placeholder="Maximizar lucro ..."> </br>
 				<hr>
 				<legend>
@@ -96,10 +96,22 @@
 				</legend>
 				</br> x = <input type="text" name="stVariavelX"
 					placeholder="Produção de Trigo"> U.M. <input type="text"
-					name="stUnidadeMedidaX" placeholder="Kilo ..."> </br> y = <input
+					name="stUnidadeMedidaX" placeholder="Kilo ..." style="width: 130px;"> </br> y = <input
 					type="text" name="stVariavelY" placeholder="Produção de Arroz">
 				U.M. <input type="text" name="stUnidadeMedidaY"
-					placeholder="Kilo ..."> </br>
+					placeholder="Kilo ..." style="width: 130px;"> </br>
+				<hr>
+				<legend>
+					<u><h5>LIMITES DA EQUACÃO</h5></u>
+				</legend>
+				</br> x >= <input type="text" name="limiteInferiorX"
+					placeholder="Limite inferior da variável x" style="width: 220px;"> </br> y >= <input
+					type="text" name="limiteInferiorY" placeholder="Limite inferior da variável y" style="width: 220px;">
+				 </br>
+				 </br> x <= <input type="text" name="limiteSuperiorX"
+					placeholder="Limite superior da variável x" style="width: 220px;"> </br> y <= <input
+					type="text" name="limiteSuperiorY" placeholder="Limite superior da variável y" style="width: 220px;">
+				 </br>
 				<hr>
 				<legend>
 					<u><h5>RESTRIÇÕES</h5></u>
