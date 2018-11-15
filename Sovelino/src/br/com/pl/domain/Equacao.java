@@ -9,6 +9,7 @@ public class Equacao {
 	private RestricaoLimite limites;
 	private String tipoProblema;
 	private Resultado resultado;
+
 	
 	private List < Restricao > restricoes;
 

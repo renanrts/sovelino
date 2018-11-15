@@ -30,9 +30,8 @@ public class Servlet extends HttpServlet {
 		Calculo cal = new Calculo();
 		equacao = cal.calcular(equacao);
 		
+		vhequacao.setView(equacao, request, response);
 		
-		PrintWriter out = response.getWriter();
-        out.println("<html><body>O lucro maximo é " + equacao.getResultado().getResultado() + " é a solução ótima e os pontos são: x" + equacao.getResultado().getCoordenada().getX() + "e y" + equacao.getResultado().getDescResposta() + "</body></html>");
-	}			
+}			
 
 }

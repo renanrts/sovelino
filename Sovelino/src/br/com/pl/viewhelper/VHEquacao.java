@@ -1,30 +1,52 @@
 package br.com.pl.viewhelper;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.pl.domain.Equacao;
 import br.com.pl.domain.FuncaoObjetivo;
 import br.com.pl.domain.Restricao;
 import br.com.pl.domain.RestricaoLimite;
+import br.com.pl.domain.Resultado;
 
 public class VHEquacao {
 
 	public Equacao getEquacao(HttpServletRequest request) {
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		int contador = Integer.parseInt(request.getParameter("qtdRestricoes"));
 	
 	
 		String stObjetivo = request.getParameter("stObjetivo");
 		String stVariavelX = request.getParameter("stVariavelX");
 		String stVariavelY = request.getParameter("stVariavelY");
+		String stUnidadeMedidaX = request.getParameter("stUnidadeMedidaX");
+		String stUnidadeMedidaY = request.getParameter("stUnidadeMedidaY");
 		
 		
 		FuncaoObjetivo funcaoObjetivo = new FuncaoObjetivo();
 		funcaoObjetivo.setVariavelX(Double.parseDouble(request.getParameter("valorVariavelX")));
 		funcaoObjetivo.setVariavelY(Double.parseDouble(request.getParameter("valorVariavelY")));
 		funcaoObjetivo.setOperador(request.getParameter("operadorFuncaoObjetivo"));
+		funcaoObjetivo.setObjetivoEquacao(request.getParameter("stObjetivo"));
 		
 		RestricaoLimite restricaoLimite = new RestricaoLimite();
 		restricaoLimite.setLimiteInferiorX(Double.parseDouble(request.getParameter("limiteInferiorX")));
@@ -46,14 +68,35 @@ public class VHEquacao {
 		}
 			
 		
-		
 		Equacao equacao = new Equacao();
 		equacao.setTipoProblema(request.getParameter("tipoProblema"));
 		equacao.setFuncObjetivo(funcaoObjetivo);
 		equacao.setLimites(restricaoLimite);
 		equacao.setRestricoes(restricoes);
 		
+		equacao.getFuncObjetivo().setObjetivoEquacao(stObjetivo);
+		equacao.getFuncObjetivo().setDescricaoX(stVariavelX);
+		equacao.getFuncObjetivo().setDescricaoY(stVariavelY);
+		equacao.getFuncObjetivo().setMedidaX(stUnidadeMedidaX);
+		equacao.getFuncObjetivo().setMedidaY(stUnidadeMedidaY);	
+	
+		
 		return equacao;
+		
+	}
+	
+	public void setView(Equacao eq, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		
+		request.setAttribute("msg", eq.getResultado().getDescResposta());
+	
+//		ObjectMapper mapper = new ObjectMapper();
+//		
+//		JsonGenerator g = new JsonFactory().
+//		mapper.writeValue(g, eq.getResultado().getRegiaoViavel())
+//		request.setAttribute("coordenadas", );
+		RequestDispatcher rd = request.getRequestDispatcher("web/Solucao.jsp");
+		rd.forward(request, response);
 		
 	}
 }

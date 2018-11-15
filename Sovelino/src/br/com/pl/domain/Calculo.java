@@ -170,7 +170,15 @@ public class Calculo {
 		
 		resultadoTrono.setCoordenada( coordenada );
 		resultadoTrono.setRegiaoViavel( pontosCandidatos );
+		
+		String obj = eq.getFuncObjetivo().getObjetivoEquacao();
+		String descX = eq.getFuncObjetivo().getDescricaoX();
+		String descY = eq.getFuncObjetivo().getDescricaoY();
+		String medidaX = eq.getFuncObjetivo().getMedidaX();
+		String medidaY = eq.getFuncObjetivo().getMedidaY();
+		
 		eq.setResultado( resultadoTrono );
+		eq.getResultado().setDescResposta("Para atingir o " + obj + " de " + eq.getResultado().getResultado() + " é necessário : " + eq.getResultado().getCoordenada().getX() + " " + medidaX + " de " + descX + " e  " + eq.getResultado().getCoordenada().getY() + " " + medidaY + " de " + descY);
 
 		return eq;
 	}
