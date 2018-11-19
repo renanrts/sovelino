@@ -15,9 +15,5 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="/Users/renantorres/Downloads/jstl-1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/renantorres/Downloads/jackson-annotations-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/renantorres/Downloads/jackson-core-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/renantorres/Downloads/jackson-databind-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/renantorres/Downloads/json-20180813.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

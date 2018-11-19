@@ -2,7 +2,6 @@ package br.com.pl.viewhelper;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,15 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import br.com.pl.domain.Equacao;
 import br.com.pl.domain.FuncaoObjetivo;
 import br.com.pl.domain.Restricao;
 import br.com.pl.domain.RestricaoLimite;
-import br.com.pl.domain.Resultado;
 
 public class VHEquacao {
 
@@ -43,6 +37,7 @@ public class VHEquacao {
 		
 		
 		FuncaoObjetivo funcaoObjetivo = new FuncaoObjetivo();
+		
 		funcaoObjetivo.setVariavelX(Double.parseDouble(request.getParameter("valorVariavelX")));
 		funcaoObjetivo.setVariavelY(Double.parseDouble(request.getParameter("valorVariavelY")));
 		funcaoObjetivo.setOperador(request.getParameter("operadorFuncaoObjetivo"));
@@ -90,11 +85,6 @@ public class VHEquacao {
 		
 		request.setAttribute("msg", eq.getResultado().getDescResposta());
 	
-//		ObjectMapper mapper = new ObjectMapper();
-//		
-//		JsonGenerator g = new JsonFactory().
-//		mapper.writeValue(g, eq.getResultado().getRegiaoViavel())
-//		request.setAttribute("coordenadas", );
 		RequestDispatcher rd = request.getRequestDispatcher("web/Solucao.jsp");
 		rd.forward(request, response);
 		
