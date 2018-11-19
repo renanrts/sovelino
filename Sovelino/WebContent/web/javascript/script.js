@@ -7,7 +7,7 @@ var contador = 1;
 
 		$("#restricoes").append(`
 				Restrição ` + contador + ` 
-		      	<input type="number" name="coeficienteX${contador}" placeholder="Coeficiente de x" style="width: 130px;"> x  
+		      	<input type="text" name="coeficienteX${contador}" placeholder="Coeficiente de x" style="width: 130px;"> x  
 				<select name="operadorRestricao${contador}">
 			        <option value="operadorSoma">+</option>
 			        <option value="operadorSubtracap">-</option>
@@ -18,7 +18,7 @@ var contador = 1;
 			        <option value="<="><=</option>
 			        <option value=">=">>=</option>
 		     	</select>	
-		     	<input type="text" name="resultadoRestricao${contador}" placeholder="Resultado da restrição" style="width: 130px;">
+		     	<input type="text" name="resultadoRestricao${contador}" placeholder="Resultado da restrição" style="width: 230px;">
 		     	<br><br>
 				`)
 				contador++;
