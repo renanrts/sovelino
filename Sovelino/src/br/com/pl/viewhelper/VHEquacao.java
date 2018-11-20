@@ -44,6 +44,7 @@ public class VHEquacao {
 		funcaoObjetivo.setObjetivoEquacao(request.getParameter("stObjetivo"));
 		
 		RestricaoLimite restricaoLimite = new RestricaoLimite();
+
 		restricaoLimite.setLimiteInferiorX(Double.parseDouble(request.getParameter("limiteInferiorX")));
 		restricaoLimite.setLimiteInferiorY(Double.parseDouble(request.getParameter("limiteInferiorY")));
 		restricaoLimite.setLimiteSuperiorX(Double.parseDouble(request.getParameter("limiteSuperiorX")));

@@ -68,19 +68,7 @@
 	       return false;
 	   }
 	   
-	 //Valida se limiteInferiorX não foi preenchido
-	   if(frm.limiteInferiorX.value == "" || frm.limiteInferiorX.value == null) {
-	       alert("Por favor, indique o limite inferior para a variável x.");
-	       frm.limiteInferiorX.focus();
-	       return false;
-	   }
 	 
-	 //Valida se limiteInferiorY não foi preenchido
-	   if(frm.limiteInferiorY.value == "" || frm.limiteInferiorY.value == null) {
-	       alert("Por favor, indique o limite inferior para a variável y.");
-	       frm.limiteInferiorY.focus();
-	       return false;
-	   }
 	   
 	 //Valida se limiteSuperiorX não foi preenchido
 	   if(frm.limiteSuperiorX.value == "" || frm.limiteSuperiorX.value == null) {
@@ -95,6 +83,16 @@
 	       frm.limiteSuperiorY.focus();
 	       return false;
 	   }
+	 
+	 //Valida se limiteInferiorX e Y não foi preenchido
+	   if(frm.limiteInferiorX.value == "" || frm.limiteInferiorX.value == null || frm.limiteInferiorY.value == "" || frm.limiteInferiorY.value == null) {		  
+		   alert("O limite inferior da variável x e y será automaticamente 0");
+			frm.limiteInferiorX.value = '0';
+			frm.limiteInferiorY.value = '0';
+			   return true;
+			   
+	   }
+	 
    }
 </script>
 
