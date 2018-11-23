@@ -67,4 +67,3 @@ public class Resultado {
 		this.regiaoViavel = regiaoViavel;
 	}
 }
-
