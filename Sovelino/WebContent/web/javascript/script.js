@@ -87,19 +87,19 @@ var contador = 1;
 		   
 		 
 		   
-		 //Valida se limiteSuperiorX não foi preenchido
-		   if(frm.limiteSuperiorX.value == "" || frm.limiteSuperiorX.value == null) {
-		       alert("Por favor, indique o limite superior para a variável x.");
-		       frm.limiteSuperiorX.focus();
-		       return false;
-		   }
-		   
-		 //Valida se limiteSuperiorY não foi preenchido
-		   if(frm.limiteSuperiorY.value == "" || frm.limiteSuperiorY.value == null) {
-		       alert("Por favor, indique o limite superior para a variável y.");
-		       frm.limiteSuperiorY.focus();
-		       return false;
-		   }
+//		 //Valida se limiteSuperiorX não foi preenchido
+//		   if(frm.limiteSuperiorX.value == "" || frm.limiteSuperiorX.value == null) {
+//		       alert("Por favor, indique o limite superior para a variável x.");
+//		       frm.limiteSuperiorX.focus();
+//		       return false;
+//		   }
+//		   
+//		 //Valida se limiteSuperiorY não foi preenchido
+//		   if(frm.limiteSuperiorY.value == "" || frm.limiteSuperiorY.value == null) {
+//		       alert("Por favor, indique o limite superior para a variável y.");
+//		       frm.limiteSuperiorY.focus();
+//		       return false;
+//		   }
 		 
 		 //Valida se limiteInferiorX e Y não foi preenchido
 		   if(frm.limiteInferiorX.value == "" || frm.limiteInferiorX.value == null || frm.limiteInferiorY.value == "" || frm.limiteInferiorY.value == null) {		  

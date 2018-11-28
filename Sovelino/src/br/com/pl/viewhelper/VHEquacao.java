@@ -47,10 +47,14 @@ public class VHEquacao {
 
 		restricaoLimite.setLimiteInferiorX(Double.parseDouble(request.getParameter("limiteInferiorX")));
 		restricaoLimite.setLimiteInferiorY(Double.parseDouble(request.getParameter("limiteInferiorY")));
-		restricaoLimite.setLimiteSuperiorX(Double.parseDouble(request.getParameter("limiteSuperiorX")));
-		restricaoLimite.setLimiteSuperiorY(Double.parseDouble(request.getParameter("limiteSuperiorY")));
-		
-		
+		if (!request.getParameter("limiteSuperiorX").isEmpty()) {
+			restricaoLimite.setLimiteSuperiorX(Double.parseDouble(request.getParameter("limiteSuperiorX")));
+			}
+		if (!request.getParameter("limiteSuperiorY").isEmpty())
+		{
+			restricaoLimite.setLimiteSuperiorY(Double.parseDouble(request.getParameter("limiteSuperiorY")));
+		}
+
 		Restricao restricao = null;
 		List<Restricao> restricoes = new ArrayList<>();
 		
